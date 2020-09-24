@@ -546,6 +546,21 @@ define Device/tplink_tl-wr841n-v14
 endef
 TARGET_DEVICES += tplink_tl-wr841n-v14
 
+
+define Device/tplink_tl-wr841n-v14-16M
+  $(Device/tplink-v2)
+  IMAGE_SIZE := 16256k
+  DEVICE_MODEL := TL-WR841N
+  DEVICE_VARIANT := v14-16M
+  TPLINK_FLASHLAYOUT := 16MLmtk
+  TPLINK_HWID := 0x08410014
+  TPLINK_HWREVADD := 0x14
+  IMAGES := sysupgrade.bin tftp-recovery.bin
+  IMAGE/tftp-recovery.bin := pad-extra 64k | $$(IMAGE/factory.bin)
+  DEFAULT := n
+endef
+TARGET_DEVICES += tplink_tl-wr841n-v14-16M
+
 define Device/tplink_tl-wr842n-v5
   $(Device/tplink-v2)
   IMAGE_SIZE := 7808k

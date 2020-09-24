@@ -177,6 +177,12 @@ static struct flash_layout layouts[] = {
 		.kernel_ep      = 0x80060000,
 		.rootfs_ofs     = 0x140000,
 	}, {
+		.id             = "16MLmtk",
+		.fw_max_len     = 0xfd0000,
+		.kernel_la      = 0x80000000,
+		.kernel_ep      = 0x80000000,
+		.rootfs_ofs     = 0x140000,
+	},{
 		/* terminating entry */
 	}
 };
